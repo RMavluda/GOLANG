@@ -10,9 +10,7 @@ func findMax(numbers ...int) int {
 	if len(numbers) == 0 {
 		return 0
 	}
-
 	max := numbers[0]
-
 	for _, i := range numbers {
 		if i > max {
 			max = i
