@@ -8,6 +8,10 @@ func main() {
 	fmt.Println(inc())
 	fmt.Println(inc())
 	fmt.Println(inc())
+	inc = increment()
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
 
 	fmt.Println(increment2())
 	fmt.Println(increment2())
