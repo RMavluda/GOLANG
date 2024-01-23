@@ -1,1 +1,1 @@
-package goByExample
+package main
