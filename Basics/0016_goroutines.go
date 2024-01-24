@@ -67,6 +67,7 @@ func main() {
 
 	for _, user := range users {
 		saveUserInfo(user)
+		break
 	}
 
 }
@@ -74,7 +75,7 @@ func main() {
 func saveUserInfo(user Usr) error {
 	fmt.Printf("WRITING FILE USER ID: %d\n", user.id)
 
-	filename := fmt.Sprintf("logs/uid_%d.txt", user.id)
+	filename := fmt.Sprintf("D:/Projects/TBT/src/GOLANG/Basics/logs/uid_%d.txt", user.id)
 	file, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
 		return err
