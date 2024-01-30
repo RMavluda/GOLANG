@@ -12,6 +12,7 @@ func workers(id int, jobs <-chan int, results chan<- int) {
 		fmt.Println("worker", id, "finished job", j)
 		results <- j * 2
 	}
+
 }
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 	for j := 1; j <= numJobs; j++ {
 		jobs <- j
 	}
-	close(jobs)
+	//close(jobs)
 
 	for a := 1; a <= numJobs; a++ {
 		<-results
