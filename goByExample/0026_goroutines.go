@@ -2,24 +2,27 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
-func f(from string) {
-	for i := 0; i < 3; i++ {
-		fmt.Println(from, ":", i)
-	}
-}
-
 func main() {
-	f("direct")
+	var wg sync.WaitGroup
+	var mu = sync.Mutex{}
+	start := time.Now()
+	for i := 0; i < 10; i++ {
+		go func() {
 
-	go f("goroutine")
+			mu.Lock()
+			for j := 0; j < 10; j++ {
+				time.Sleep(time.Second)
+			}
+			mu.Unlock()
+		}()
+	}
 
-	go func(msg string) {
-		fmt.Println(msg)
-	}("going")
+	wg.Wait()
+	diff := time.Now().Sub(start)
+	fmt.Println(diff)
 
-	time.Sleep(time.Second)
-	fmt.Println("done")
 }
