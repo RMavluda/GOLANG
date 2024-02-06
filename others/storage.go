@@ -23,6 +23,21 @@ type MemoryStorage struct {
 	sync.Mutex
 }
 
+func (s *MemoryStorage) Get(id int) (Employee, error) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (s *MemoryStorage) Update(id int, e Employee) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (s *MemoryStorage) Delete(id int) {
+	//TODO implement me
+	panic("implement me")
+}
+
 func NewMemoryStorage() *MemoryStorage {
 	return &MemoryStorage{
 		data:    make(map[int]Employee),
