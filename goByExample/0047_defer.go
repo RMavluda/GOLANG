@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	f := createFile("defer.txt")
+	f := createFile("./tmp/defer.txt")
 	defer closeFile(f)
 	writeFile(f)
 }
