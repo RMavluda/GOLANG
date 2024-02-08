@@ -14,7 +14,7 @@ func check(e error) {
 }
 
 func main() {
-	dat, err := os.ReadFile("./tmp/dat/")
+	dat, err := os.ReadFile("./tmp/dat")
 	check(err)
 	fmt.Print(string(dat))
 
