@@ -16,7 +16,6 @@ func main() {
 
 	f, err := os.CreateTemp("", "sample")
 	check3(err)
-
 	fmt.Println("Temp file name:", f.Name())
 
 	defer os.Remove(f.Name())
